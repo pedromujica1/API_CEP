@@ -16,6 +16,7 @@ function preencherFormulario(endereco) {
 }
 
 
+//Regex para verificar o número do CEP
 function eNumero(numero) {
     return /^[0-9]+$/.test(numero);
 }
@@ -51,5 +52,4 @@ async function pesquisarCep() {
 
 }
 
-document.getElementById('cep')
-        .addEventListener('focusout',pesquisarCep);
+document.getElementById('cep').addEventListener('focusout',pesquisarCep);
