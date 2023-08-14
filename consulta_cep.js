@@ -1,10 +1,14 @@
 // 'use strict';
 
-function limparFormulario(endereco) {
+function limparFormulario() {
     document.getElementById('endereco').value = '';
     document.getElementById('bairro').value = '';
     document.getElementById('cidade').value = '';
     document.getElementById('estado').value = '';
+    document.getElementById('ibge').value = "";
+    document.getElementById('siafe').value = "";
+    document.getElementById('ddd').value = "";
+    document.getElementById('complemento').value = "";
 }
 
 
@@ -13,6 +17,11 @@ function preencherFormulario(endereco) {
     document.getElementById('bairro').value = endereco.bairro;
     document.getElementById('cidade').value = endereco.localidade;
     document.getElementById('estado').value = endereco.uf;
+    document.getElementById('ibge').value = endereco.ibge;
+    document.getElementById('siafe').value = endereco.siafi;
+    document.getElementById('ddd').value = endereco.ddd;
+    document.getElementById('complemento').value = endereco.complemento.toUpperCase();
+
 }
 
 
@@ -40,6 +49,7 @@ async function pesquisarCep() {
         const endereco = await dados.json();
         console.log(endereco)
 
+        //Se a consulta da API não retornar um CEP, um erro ocorre
         if (endereco.hasOwnProperty('erro')) {
             document.getElementById('endereco').value = 'CEP não encontrado!';
             
@@ -53,3 +63,4 @@ async function pesquisarCep() {
 }
 
 document.getElementById('cep').addEventListener('focusout',pesquisarCep);
+//85814-800
