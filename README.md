@@ -1,2 +1,2 @@
 # Consulta API ViaCep
-Projeto para consumir API consultaCEP
+Projeto para consumir Webservice ViaCep
